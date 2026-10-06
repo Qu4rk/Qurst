@@ -57,7 +57,7 @@ Nine javac deprecation warnings in unchanged upstream code come from NeoForge's 
 
 ## Tests still to migrate
 
-The pinned upstream has 32 Fabric gametest Java files, including screenshot comparisons, movement regressions, inventory commands and entity filters. These are preserved under `src/gametest`. They are excluded from the native build and currently provide no NeoForge regression evidence. The isolated `src/smoke` test mod supplies only bootstrap/title screen verification. The isolated `src/clienttest` test mod proves translations/options/restart behavior across two client launches in `run/translations-test/`. Port the relevant upstream tests alongside each runtime behavior slice.
+The pinned upstream has 32 Fabric gametest Java files, including screenshot comparisons, movement regressions, inventory commands and entity filters. These are preserved under `src/gametest`. They are excluded from the native build and currently provide no NeoForge regression evidence. The isolated `src/smoke` test mod supplies only bootstrap/title screen verification. The isolated `src/clienttest` test mod proves translations/options/restart behavior across two client launches in `run/translations-test/`. The isolated `src/keybindtest` test mod proves keybind editing, profile save/load and restart input dispatch across two client launches in `run/keybinds-test/`, including an unselected-key save guard in the editor. Port the relevant upstream tests alongside each runtime behavior slice.
 
 ## Maintainer workflow
 

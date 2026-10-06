@@ -28,6 +28,10 @@ sourceSets {
         compileClasspath += sourceSets.main.output
         runtimeClasspath += sourceSets.main.output
     }
+    keybindtest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
 }
 
 configurations {
@@ -35,6 +39,8 @@ configurations {
     smokeRuntimeOnly.extendsFrom runtimeOnly
     clienttestImplementation.extendsFrom implementation
     clienttestRuntimeOnly.extendsFrom runtimeOnly
+    keybindtestImplementation.extendsFrom implementation
+    keybindtestRuntimeOnly.extendsFrom runtimeOnly
 }
 
 neoForge {
@@ -42,6 +48,7 @@ neoForge {
     validateAccessTransformers = true
     addModdingDependenciesTo sourceSets.smoke
     addModdingDependenciesTo sourceSets.clienttest
+    addModdingDependenciesTo sourceSets.keybindtest
 
     mods {
         wurst {
@@ -52,6 +59,9 @@ neoForge {
         }
         wurst_clienttest {
             sourceSet sourceSets.clienttest
+        }
+        wurst_keybindtest {
+            sourceSet sourceSets.keybindtest
         }
     }
 
@@ -80,6 +90,22 @@ neoForge {
             sourceSet = sourceSets.clienttest
             loadedMods = [mods.wurst, mods.wurst_clienttest]
             gameDirectory = file('run/translations-test')
+            programArgument '--username=Wurst-Bot'
+            systemProperty 'wurst.test.phase', '2'
+        }
+        clientKeybindsTest1 {
+            client()
+            sourceSet = sourceSets.keybindtest
+            loadedMods = [mods.wurst, mods.wurst_keybindtest]
+            gameDirectory = file('run/keybinds-test')
+            programArgument '--username=Wurst-Bot'
+            systemProperty 'wurst.test.phase', '1'
+        }
+        clientKeybindsTest2 {
+            client()
+            sourceSet = sourceSets.keybindtest
+            loadedMods = [mods.wurst, mods.wurst_keybindtest]
+            gameDirectory = file('run/keybinds-test')
             programArgument '--username=Wurst-Bot'
             systemProperty 'wurst.test.phase', '2'
         }
@@ -171,6 +197,66 @@ tasks.register('runClientTranslationsTest') {
             throw new GradleException(
                 'Persisted Force English setting is not false.')
         }
+    }
+}
+
+// Slice 02b keybind restart proof: two separate client JVMs share one
+// isolated game directory. Phase 1 drives the real manager/editor/capture
+// and profiles UI, persists a non-default profile; phase 2 asserts the
+// restored bindings before any mutation, then proves native dispatch.
+// Only this generated fixture is reset before phase 1.
+def keybindsTestDir = layout.projectDirectory.dir('run/keybinds-test')
+def keybindsPhase1Marker =
+    layout.projectDirectory.file('run/keybinds-test/phase1-pass.txt').asFile
+def keybindsFinalMarker =
+    layout.projectDirectory.file('run/keybinds-test/wurst-keybinds-pass.txt').asFile
+def keybindsActiveFile =
+    layout.projectDirectory.file('run/keybinds-test/wurst/keybinds.json').asFile
+def keybindsProfileFile =
+    layout.projectDirectory.file('run/keybinds-test/wurst/keybinds/slice02b.json').asFile
+tasks.named('runClientKeybindsTest1') {
+    doFirst {
+        def dir = keybindsTestDir.asFile.toPath()
+        if (java.nio.file.Files.isDirectory(dir)) {
+            java.nio.file.Files.walk(dir).sorted(java.util.Comparator.reverseOrder())
+                .forEach(java.nio.file.Files::deleteIfExists)
+        }
+    }
+}
+tasks.named('runClientKeybindsTest2') {
+    dependsOn 'runClientKeybindsTest1'
+}
+tasks.register('runClientKeybindsTest') {
+    dependsOn 'runClientKeybindsTest2'
+    doLast {
+        if (!keybindsPhase1Marker.isFile()
+            || keybindsPhase1Marker.text.trim()
+                != 'phase=1 ok keybinds-profile slice02b') {
+            throw new GradleException(
+                'Keybind test phase 1 did not attest its profile journey.')
+        }
+        if (!keybindsFinalMarker.isFile()
+            || keybindsFinalMarker.text.trim()
+                != '156 hacks; 52 commands; 18 other features; keybinds restored') {
+            throw new GradleException(
+                'Keybind restart proof did not pass.')
+        }
+        def checkKeybinds = { File file ->
+            def bindings = new groovy.json.JsonSlurper().parse(file)
+            if (!(bindings instanceof Map) || bindings.size() != 16) {
+                throw new GradleException(
+                    "Unexpected bindings in ${file.name}: expected 16 entries.")
+            }
+            if (bindings['key.keyboard.f9'] != 'fullbright'
+                || bindings['key.mouse.4'] != 'fullbright'
+                || bindings.containsKey('key.keyboard.f8')
+                || bindings.containsKey('key.keyboard.f10')) {
+                throw new GradleException(
+                    "Unexpected fixture bindings in ${file.name}.")
+            }
+        }
+        checkKeybinds(keybindsActiveFile)
+        checkKeybinds(keybindsProfileFile)
     }
 }
 

@@ -47,6 +47,8 @@ def verify(jar_path):
                 "Test-only smoke code in production distribution")
         require(not any(name.startswith("net/wurstclient/clienttest/") for name in entries),
                 "Test-only clienttest code in production distribution")
+        require(not any(name.startswith("net/wurstclient/keybindtest/") for name in entries),
+                "Test-only keybindtest code in production distribution")
         require("fabric.mod.json" not in entries, "Fabric metadata in native distribution")
         require("wurst.accesswidener" not in entries, "Fabric access widener in native distribution")
         require(any(name.startswith("LICENSE") for name in entries), "GPL license missing")

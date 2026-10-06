@@ -80,6 +80,12 @@ public final class KeybindEditorScreen extends Screen
 	
 	private void save()
 	{
+		// A fresh editor starts with the "NONE" sentinel until a key is
+		// captured. Persisting it would store an invalid binding, so
+		// saving without a selection stays on this screen instead.
+		if("NONE".equals(key))
+			return;
+		
 		if(oldKey != null)
 			WurstClient.INSTANCE.getKeybinds().remove(oldKey);
 		

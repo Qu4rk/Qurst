@@ -1,0 +1,11 @@
+license="GPL-3.0-or-later"
+[[mods]]
+modId="wurst_keybindtest"
+version="1.0"
+displayName="Wurst native keybind test"
+[[dependencies.wurst_keybindtest]]
+modId="wurst"
+type="required"
+versionRange="[7.56-MC26.3-NeoForge-dev.1]"
+ordering="AFTER"
+side="CLIENT"
