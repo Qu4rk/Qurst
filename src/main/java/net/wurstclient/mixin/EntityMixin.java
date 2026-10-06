@@ -7,14 +7,18 @@
  */
 package net.wurstclient.mixin;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
+import java.util.function.Predicate;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.neoforged.neoforge.fluids.FluidType;
 
 import net.minecraft.commands.CommandSource;
 import net.minecraft.world.Nameable;
@@ -31,18 +35,18 @@ public abstract class EntityMixin
 	 * Prevents fluid currents from pushing the local player while AntiWaterPush
 	 * is enabled.
 	 */
-	@WrapOperation(method = "updateFluidInteraction()Z",
+	@ModifyArg(method = "updateFluidInteraction()Z",
 		at = @At(value = "INVOKE",
-			target = "Lnet/minecraft/world/entity/Entity;isPushedByFluid()Z",
-			ordinal = 0))
-	private boolean wrapUpdateFluidInteractionIsPushedByFluid(Entity instance,
-		Operation<Boolean> original)
+			target = "Lnet/minecraft/world/entity/EntityFluidInteraction;update(Lnet/minecraft/world/entity/Entity;Ljava/util/function/Predicate;)Z"),
+		index = 1)
+	private Predicate<FluidType> modifyFluidPushPredicate(
+		Predicate<FluidType> original)
 	{
-		if(instance == WurstClient.MC.player
+		if((Object)this == WurstClient.MC.player
 			&& WurstClient.INSTANCE.getHax().antiWaterPushHack.isEnabled())
-			return false;
+			return type -> false;
 		
-		return original.call(instance);
+		return original;
 	}
 	
 	/**

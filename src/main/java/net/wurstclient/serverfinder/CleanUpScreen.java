@@ -7,13 +7,15 @@
  */
 package net.wurstclient.serverfinder;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import com.mojang.blaze3d.platform.InputConstants;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -232,7 +234,7 @@ public class CleanUpScreen extends Screen
 	private void renderButtonTooltip(GuiGraphicsExtractor context, int mouseX,
 		int mouseY)
 	{
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			if(!button.isHoveredOrFocused()
 				|| !(button instanceof CleanUpButton))

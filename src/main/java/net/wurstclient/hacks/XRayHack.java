@@ -7,14 +7,15 @@
  */
 package net.wurstclient.hacks;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
-import net.fabricmc.loader.api.metadata.ModMetadata;
+import net.neoforged.fml.ModList;
+
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.core.BlockPos;
@@ -239,8 +240,8 @@ public final class XRayHack extends Hack
 	 */
 	private String checkOptiFine()
 	{
-		Stream<String> mods = FabricLoader.getInstance().getAllMods().stream()
-			.map(ModContainer::getMetadata).map(ModMetadata::getId);
+		Stream<String> mods =
+			ModList.get().getMods().stream().map(mod -> mod.getModId());
 		
 		Pattern optifine = Pattern.compile("opti(?:fine|fabric).*");
 		

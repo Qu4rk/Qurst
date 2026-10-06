@@ -7,6 +7,8 @@
  */
 package net.wurstclient.navigator;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import com.mojang.blaze3d.platform.InputConstants;
 
 import java.awt.Color;
@@ -19,7 +21,7 @@ import java.util.TreeMap;
 
 import org.joml.Matrix3x2fStack;
 
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
@@ -262,7 +264,7 @@ public final class NavigatorFeatureScreen extends NavigatorScreen
 			return;
 		}
 		
-		boolean noButtons = Screens.getWidgets(this).isEmpty();
+		boolean noButtons = ScreenWidgets.getWidgets(this).isEmpty();
 		Rectangle area = new Rectangle(width / 2 - 154, 60, 308,
 			height - 60 - (noButtons ? 43 : 67));
 		if(!area.contains(x, y))
@@ -330,7 +332,7 @@ public final class NavigatorFeatureScreen extends NavigatorScreen
 		int bgx2 = middleX + 154;
 		int bgy1 = 60;
 		int bgy2 = height - 43;
-		boolean noButtons = Screens.getWidgets(this).isEmpty();
+		boolean noButtons = ScreenWidgets.getWidgets(this).isEmpty();
 		int bgy3 = bgy2 - (noButtons ? 0 : 24);
 		int windowY1 = bgy1 + scroll + windowComponentY;
 		int windowY2 = windowY1 + window.getInnerHeight();
@@ -458,7 +460,7 @@ public final class NavigatorFeatureScreen extends NavigatorScreen
 		context.disableScissor();
 		
 		// buttons below scissor box
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			// positions
 			int x1 = button.getX();

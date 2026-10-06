@@ -7,6 +7,8 @@
  */
 package net.wurstclient.mixin;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -155,11 +157,11 @@ public abstract class LocalPlayerMixin extends AbstractClientPlayer
 	/**
 	 * Prevents flying up with Flight activating elytra.
 	 */
-	@Override
-	public boolean canGlide()
+	@Inject(method = "canGlide()Z", at = @At("HEAD"), cancellable = true)
+	private void onCanGlide(CallbackInfoReturnable<Boolean> cir)
 	{
-		return !WurstClient.INSTANCE.getHax().flightHack.isEnabled()
-			&& super.canGlide();
+		if(WurstClient.INSTANCE.getHax().flightHack.isEnabled())
+			cir.setReturnValue(false);
 	}
 	
 	/**

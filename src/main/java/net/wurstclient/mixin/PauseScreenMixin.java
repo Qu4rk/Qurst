@@ -7,6 +7,8 @@
  */
 package net.wurstclient.mixin;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.llamalad7.mixinextras.sugar.Local;
 
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
@@ -48,7 +50,7 @@ public abstract class PauseScreenMixin extends Screen
 			.isVisibleInGameMenu())
 			return;
 		
-		List<AbstractWidget> buttons = Screens.getWidgets(this);
+		List<AbstractWidget> buttons = ScreenWidgets.getWidgets(this);
 		
 		// Fallback position
 		int buttonX = width / 2 - 102;
@@ -81,7 +83,7 @@ public abstract class PauseScreenMixin extends Screen
 		wurstOptionsButton = WurstClient.INSTANCE.getOtfs().wurstOptionsOtf
 			.buttonBuilder(this::openWurstOptions)
 			.bounds(buttonX, buttonY, buttonWidth, buttonHeight).build();
-		buttons.add(wurstOptionsButton);
+		addRenderableWidget(wurstOptionsButton);
 	}
 	
 	@Unique
@@ -96,7 +98,7 @@ public abstract class PauseScreenMixin extends Screen
 	{
 		// Check if there are any buttons in the way
 		ArrayList<AbstractWidget> buttonsInTheWay = new ArrayList<>();
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			if(button.getRight() < x || button.getX() > x + width
 				|| button.getBottom() < y || button.getY() > y + height)

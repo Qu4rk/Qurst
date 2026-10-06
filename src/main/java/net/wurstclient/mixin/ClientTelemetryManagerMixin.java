@@ -7,6 +7,8 @@
  */
 package net.wurstclient.mixin;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,7 +28,8 @@ public class ClientTelemetryManagerMixin
 	private void onGetOutsideSessionSender(
 		CallbackInfoReturnable<TelemetryEventSender> cir)
 	{
-		if(!WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled())
+		if(WurstClient.INSTANCE.getOtfs() != null
+			&& !WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled())
 			return;
 		
 		// Return a dummy that can't actually send anything. :)

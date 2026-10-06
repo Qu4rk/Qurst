@@ -1,110 +1,32 @@
-# Wurst Client v7
+# Wurst Client — native NeoForge 26.3 port
 
-![Wurst Client logo](https://img.wimods.net/github.com/Wurst-Imperium/Wurst7?to=https://wurst.wiki/_media/logo/wurst_758x192.webp)
+Development port of [Wurst Client 7.56](https://github.com/Wurst-Imperium/Wurst7/tree/26.3), pinned to commit `71e3af0f2747937086ef889e34359507d95cc9f8`.
 
-- **Downloads:** [https://www.wurstclient.net/download/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Fdownload%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+Target: Minecraft Java **26.3**, NeoForge **26.3.0.51-beta**, Java **25**. This is a native NeoForge mod.
 
-- **Installation guide:** [https://www.wurstclient.net/tutorials/how-to-install/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Ftutorials%2Fhow-to-install%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+**Status:** slice 01 native build and title-screen bootstrap checks pass; the independent review is recorded under `.quarkloop/runs/`. The full upstream feature set is retained; runtime feature parity is being verified in the later slices. See [the roadmap](docs/NEOFORGE_PORT.md) and [the complete source inventory](docs/upstream-inventory.json).
 
-- **Feature list:** [https://www.wurstclient.net/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+## Build and run
 
-- **Wiki:** [https://wurst.wiki/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwurst.wiki%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+Install a Java 25 JDK and set `JAVA_HOME`, then run:
 
-- **Forum:** [https://wurstforum.net/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwurstforum.net%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)	
-
-- **Twitter/X:** [https://x.com/Wurst_Imperium](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://x.com/Wurst_Imperium)
-
-- **YouTube:** [https://www.youtube.com/@Alexander01998](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://www.youtube.com/@Alexander01998)
-
-- **Donations/Perks:** [https://ko-fi.com/wurst](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://ko-fi.com/wurst)
-
-## Installation
-
-Wurst 7 can be installed just like any other Fabric mod. Here are the basic installation steps:
-
-1. Run the Fabric installer.
-2. Add the Wurst Client and Fabric API to your mods folder.
-
-Please refer to the [full Wurst 7 installation guide](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Ftutorials%2Fhow-to-install%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo) if you need more detailed instructions or run into any problems.
-
-Also, this should be obvious, but you do need to have a licensed copy of Minecraft Java Edition in order to use Wurst. Wurst is a cheat client, not a pirate client.
-
-## Development Setup
-
-> [!IMPORTANT]
-> Make sure you have [Java Development Kit 25](https://adoptium.net/temurin/releases?version=25&os=any&arch=any) installed. It won't work with other versions.
-
-### Development using Eclipse
-
-1. Clone the repository:
-
-   ```pwsh
-   git clone https://github.com/Wurst-Imperium/Wurst7.git
-   cd Wurst7
-   ```
-
-2. Generate the sources:
-
-   ```pwsh
-   ./gradlew genSources genEclipseRuns
-   ```
-
-3. In Eclipse, go to `Import...` > `Gradle` > `Existing Gradle Project` and select this project.
-
-4. **Optional:** Right-click on the project and select `Properties` > `Java Code Style`. Then under `Clean Up`, `Code Templates`, `Formatter`, import the respective files in the `codestyle` folder.
-
-### Development using VSCode / Cursor
-
-> [!TIP]
-> You'll probably want to install the [Extension Pack for Java](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dvscjava.vscode-java-pack) to make development easier.
-
-1. Clone the repository:
-
-   ```pwsh
-   git clone https://github.com/Wurst-Imperium/Wurst7.git
-   cd Wurst7
-   ```
-
-2. Generate the sources:
-
-   ```pwsh
-   ./gradlew genSources vscode
-   ```
-
-3. Open the `Wurst7` folder in VSCode / Cursor.
-
-4. **Optional:** In the VSCode settings, set `java.format.settings.url` to `https://raw.githubusercontent.com/Wurst-Imperium/Wurst7/master/codestyle/formatter.xml` and `java.format.settings.profile` to `Wurst-Imperium`.
-
-### Development using IntelliJ IDEA
-
-I don't use or recommend IntelliJ, but the commands to run would be:
-
-```pwsh
-git clone https://github.com/Wurst-Imperium/Wurst7.git
-cd Wurst7
-./gradlew genSources ideaSyncTask --no-configuration-cache
+```sh
+./gradlew build --console=plain
+python3 scripts/verify_neoforge_port.py
+./gradlew runClientSmoke --console=plain
+./gradlew runClient --console=plain
 ```
 
-**Note:** IntelliJ IDEA is [not yet compatible](https://github.com/FabricMC/fabric-loom/issues/1349) with Gradle's configuration cache. You will run into issues.
+On the development Mac, `./scripts/gradle-java25` can be used in place of `./gradlew`; it selects the verified local Java 25 installation or a system JDK. It does not install Java.
 
-Possible workarounds:
-- Turn off args files ([this setting](https://i.imgur.com/zHqIOYg.png)). Won't work for some users because of a command length limit.
-- Add `--no-configuration-cache` to all of your Gradle commands.
+The client runs in the project's `run/` directory. The automated bootstrap test uses `run/smoke/`, checks all 156 hacks, 52 commands, 18 other features and the title screen, then exits. Test-only code is outside the production artifact. Development runs use the upstream analytics debug path.
 
-## Contributing
+Build outputs are under `build/libs/`. The package verifier checks native metadata, every hack and command class, original assets, GPL notices and the corresponding sources jar. It rejects missing features and Fabric dependencies.
 
-Please always [contact me](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Fcontact%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo) before opening a Pull Request. Any method works. That way we can discuss your ideas early and avoid wasting your time working on unwanted features or having to make lots of changes later.
+The original Fabric client tests are preserved in `src/gametest` as migration references. They do not currently run on NeoForge. See the roadmap for behavior testing and optional renderer compatibility.
 
-We also have [contributing guidelines](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://github.com/Wurst-Imperium/Wurst7/blob/master/CONTRIBUTING.md) to help you get started.
+## License and attribution
 
-## Translations
+Original code: Wurst-Imperium and contributors, copyright 2014–2026. This fork preserves the upstream GPLv3 license and GPL-3.0-or-later metadata. See [LICENSE.txt](LICENSE.txt). Native port changes are identified in source comments and [the port notes](docs/NEOFORGE_PORT.md). Corresponding sources are built alongside the binary.
 
-To enable translations in-game, go to Wurst Options > Translations > ON.
-
-The preferred way to submit translations is through a Pull Request here on GitHub. The translation files are located in [this folder](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://github.com/Wurst-Imperium/Wurst7/tree/master/src/main/resources/assets/wurst/translations).
-
-Names of features (hacks/commands/etc.) should always be kept in English. This ensures that everyone can use the same commands, keybinds, etc. regardless of their language setting. It also makes it easier to communicate with someone who uses Wurst in a different language.
-
-## License
-
-This code is licensed under the GNU General Public License v3. **You can only use this code in open-source clients that you release under the same license! Using it in closed-source/proprietary clients is not allowed!**
+[Original upstream README](docs/UPSTREAM_README.md).

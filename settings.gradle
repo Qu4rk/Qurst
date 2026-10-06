@@ -1,21 +1,12 @@
 pluginManagement {
     repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        mavenCentral()
         gradlePluginPortal()
-        exclusiveContent {
-            forRepository {
-                maven {
-                    name = 'WIMods'
-                    url = 'https://maven.wimods.net/releases'
-                }
-            }
-            filter {
-                includeGroupByRegex 'net\\.wimods(\\..*)?'
-            }
-        }
+        mavenCentral()
     }
 }
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'Wurst-NeoForge'

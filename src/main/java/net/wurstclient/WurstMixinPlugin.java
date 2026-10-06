@@ -7,6 +7,8 @@
  */
 package net.wurstclient;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.util.List;
 import java.util.Set;
 
@@ -14,7 +16,6 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import net.wurstclient.mixin.xray.sodium.BlockRendererMixin;
 import net.wurstclient.util.BBEModCompat;
 
 public final class WurstMixinPlugin implements IMixinConfigPlugin
@@ -23,8 +24,8 @@ public final class WurstMixinPlugin implements IMixinConfigPlugin
 	public boolean shouldApplyMixin(String targetClassName,
 		String mixinClassName)
 	{
-		if(BlockRendererMixin.class.getName().equals(mixinClassName)
-			&& BBEModCompat.isBrokenBBEInstalled())
+		if("net.wurstclient.mixin.xray.sodium.BlockRendererMixin"
+			.equals(mixinClassName) && BBEModCompat.isBrokenBBEInstalled())
 			return false;
 		
 		return true;

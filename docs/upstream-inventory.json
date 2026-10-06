@@ -1,0 +1,1350 @@
+{
+  "origin": "https://github.com/Wurst-Imperium/Wurst7",
+  "branch": "26.3",
+  "commit": "71e3af0f2747937086ef889e34359507d95cc9f8",
+  "wurst_version": "7.56",
+  "minecraft_version": "26.3",
+  "neoforge_version": "26.3.0.51-beta",
+  "status": "native_bootstrap_verified_feature_behavior_not_verified",
+  "hacks": [
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AimAssistHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AirPlaceHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AnchorAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiAfkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiBlindHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiCactusHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiEntityPushHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiHungerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiKnockbackHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiSpamHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiWaterPushHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AntiWobbleHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ArrowDmgHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AttributeSwapHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoArmorHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoBuildHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoCompleteHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoDropHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoEatHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoFarmHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoFishHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoLeaveHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoLibrarianHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoMineHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoPotionHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoReconnectHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoRespawnHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSignHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSoupHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSprintHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoStealHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSwimHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSwitchHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoSwordHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoToolHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoTotemHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/AutoWalkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BarrierEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BaseFinderHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BlinkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BoatFlyHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BonemealAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BowAimbotHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BuildRandomHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/BunnyHopHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CameraDistanceHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CameraNoClipHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CaveFinderHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ChatTranslatorHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ChestEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ClickAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ClickGuiHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CrashChestHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CreativeFlightHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CriticalsHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/CrystalAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/DerpHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/DolphinHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ExcavatorHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ExtraElytraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FancyChatHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FastBreakHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FastLadderHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FastPlaceHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FeedAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FightBotHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FishHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FlightHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FollowHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ForceOpHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FreecamHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/FullbrightHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/GlideHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/HandNoClipHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/HeadRollHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/HealthTagsHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/HighJumpHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/InfiniChatHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/InstaBuildHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/InstantBunkerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/InvWalkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ItemEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ItemGeneratorHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/JesusHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/JetpackHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/KaboomHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/KillPotionHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/KillauraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/KillauraLegitHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/LiquidsHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/LsdHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MaceDmgHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MassTpaHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MileyCyrusHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MobEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MobSpawnEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/MultiAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NameProtectHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NameTagsHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NavigatorHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NewChunksHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoBackgroundHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoClipHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoFallHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoFireOverlayHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoFogHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoHurtcamHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoLevitationHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoOverlayHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoPumpkinHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoShieldOverlayHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoSlowdownHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoVignetteHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoWeatherHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NoWebHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NukerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/NukerLegitHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/OpenWaterEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/OverlayHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/PanicHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ParkourHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/PlayerEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/PortalEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/PortalGuiHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ProphuntEspHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ProtectHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/RadarHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/RainbowUiHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ReachHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/RemoteViewHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/RestockHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SafeWalkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ScaffoldWalkHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SearchHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SkinDerpHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SneakHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SnowShoeHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SpeedHackHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SpeedNukerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/SpiderHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/StepHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TemplateToolHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/ThrowHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TillauraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TimerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TiredHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TooManyHaxHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TpAuraHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TrajectoriesHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TreeBotHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TriggerBotHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TrollPotionHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TrueSightHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/TunnellerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/VeinMinerHack.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/hacks/XRayHack.java",
+      "runtime_status": "not_verified"
+    }
+  ],
+  "commands": [
+    {
+      "source": "src/main/java/net/wurstclient/commands/AddAltCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/AnnoyCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/AuthorCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/BindCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/BindsCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/BlinkCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/BlockListCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ClearCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/CopyItemCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/DamageCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/DigCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/DropCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/EnabledHaxCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/EnchantCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ExcavateCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/FeaturesCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/FollowCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/FriendsCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/GetPosCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/GiveCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/GmCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/GoToCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/HelpCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/InvseeCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/IpCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ItemListCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/JumpCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/LeaveCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ModifyCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/PathCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/PotionCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ProtectCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/RenameCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/RepairCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/RvCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SayCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SetBlockCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SetCheckboxCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SetColorCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SetModeCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SetSliderCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SettingsCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/SvCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/TCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/TacoCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/TooManyHaxCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/TpCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/UnbindCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/VClipCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ViewCompCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/ViewNbtCmd.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/commands/XrayCmd.java",
+      "runtime_status": "not_verified"
+    }
+  ],
+  "other_features": [
+    {
+      "source": "src/main/java/net/wurstclient/other_features/ChangelogOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/CleanUpOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/DisableOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/HackListOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/KeybindManagerOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/LastServerOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/NoChatReportsOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/NoTelemetryOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/ReconnectOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/ServerFinderOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/TabGuiOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/TranslationsOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/VanillaSpoofOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/WikiDataExportOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/WurstCapesOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/WurstLogoOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/WurstOptionsOtf.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/other_features/ZoomOtf.java",
+      "runtime_status": "not_verified"
+    }
+  ],
+  "mixins": [
+    {
+      "source": "src/main/java/net/wurstclient/mixin/BlockStateBaseMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/CameraMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ChatComponentMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ChatScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ClientCommonPacketListenerImplMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ClientPacketListenerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ClientTelemetryManagerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ConnectionMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/CreativeModeInventoryScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/DirectJoinServerScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/DisconnectedScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/DownloadQueueMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/EntityMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/FirstPersonHandsAndItemsRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/GameRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/HudMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/JoinMultiplayerScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/KeyBindsListMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/KeyMappingMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/KeyboardHandlerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/LanguageManagerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/LevelRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/MinecraftMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/MouseHandlerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/MultiPlayerGameModeMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/OptionInstanceMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/PackSelectionScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/PauseScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ScreenEffectRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/ServerNameResolverMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/SkinManagerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/StatsScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/TitleScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/anticactus/CactusBlockMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autocomplete/CommandSuggestionsMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autorespawn/DeathScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autosign/AbstractSignEditScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autosprint/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autosteal/ContainerScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/autosteal/ShulkerBoxScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/barrieresp/ClientLevelMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/freecam/CameraMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/freecam/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/freecam/MouseHandlerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/healthtags/EntityRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nameprotect/StringDecomposerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nametags/EntityRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nametags/LivingEntityRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nametags/MobRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nametags/SubmitNodeCollectionMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nobackground/ScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noclip/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nofog/AtmosphericFogEnvironmentMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/nofog/FogRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noshieldoverlay/FirstPersonHandsAndItemsRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noslowdown/BlockMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noslowdown/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noweather/ClientClockInstanceMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noweather/EnvironmentAttributeSystemMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/noweather/LevelMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/remoteview/LevelExtractorMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/remoteview/LocalPlayerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/snowshoe/PowderSnowBlockMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/timer/DeltaTrackerTimerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/BlockEntityRenderDispatcherMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/BlockStateBaseMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/FluidRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/ModelBlockRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/SectionCompilerMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/indigo/AltModelBlockRendererImplMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/sodium/AbstractBlockRenderContextMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/sodium/BlockRendererMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/main/java/net/wurstclient/mixin/xray/sodium/DefaultFluidRendererMixin.java",
+      "runtime_status": "not_verified"
+    }
+  ],
+  "upstream_tests": [
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/BlockTestHelper.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/SingleplayerTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/WurstClientTestHelper.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/WurstTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/mixin/ScreenMixin.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/AltManagerTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/AntiWobbleHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/AttributeSwapMechanicTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/AutoMineHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/AutoSprintHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/BlinkHackSmokeTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/ChestEspGroupTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/ChestEspRenderingTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/CopyItemCmdTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/DamageCmdTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/EntityFilterTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/FreecamHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/GiveCmdTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/LsdHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/ModifyCmdTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/NoFallHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/NoShieldOverlayHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/NoWeatherHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/OcclusionCullingTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/PauseScreenTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/PistonTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/XRayHackTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/filters/FilterBabiesTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/filters/FilterCalmTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/filters/FilterPassiveWaterTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/filters/FilterPetsTest.java",
+      "runtime_status": "not_verified"
+    },
+    {
+      "source": "src/gametest/java/net/wurstclient/gametest/tests/filters/MobDispositionTest.java",
+      "runtime_status": "not_verified"
+    }
+  ],
+  "native_exclusions": {
+    "src/main/java/net/wurstclient/mixin/xray/indigo/AltModelBlockRendererImplMixin.java": "Fabric-only Indigo renderer: source retained; no native NeoForge target"
+  }
+}

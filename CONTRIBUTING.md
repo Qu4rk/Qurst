@@ -33,7 +33,7 @@ Happy maintainers ensure happy users, happy users ensure happy sponsors. In that
 
 - **Follow the code style:** Run `./gradlew spotlessApply` or Eclipse settings from the [codestyle folder](codestyle). For anything that this doesn't cover, please try to match the existing style as closely as possible.
 
-- **Run tests:** `./gradlew check runClientGameTest runClientGameTestWithMods` must pass.
+- **Run tests:** `./gradlew build`, `python3 scripts/verify_neoforge_port.py`, and `./gradlew runClientSmoke` must pass for this native fork. The original Fabric `runClientGameTest` / `runClientGameTestWithMods` suite is preserved as a migration reference; translate relevant tests in each behavior slice before claiming runtime parity.
 
 - **Sign the CLA:** <https://cla-assistant.io/Wurst-Imperium/Wurst7>. See below for why.
 

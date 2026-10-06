@@ -7,6 +7,8 @@
  */
 package net.wurstclient.mixin;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.io.File;
 
 import org.spongepowered.asm.mixin.Final;
@@ -181,7 +183,8 @@ public abstract class MinecraftMixin
 	private void onGetProfileKeyPairManager(
 		CallbackInfoReturnable<ProfileKeyPairManager> cir)
 	{
-		if(WurstClient.INSTANCE.getOtfs().noChatReportsOtf.isActive())
+		if(WurstClient.INSTANCE.getOtfs() != null
+			&& WurstClient.INSTANCE.getOtfs().noChatReportsOtf.isActive())
 			cir.setReturnValue(ProfileKeyPairManager.EMPTY_KEY_MANAGER);
 		
 		if(wurstProfileKeys == null)
@@ -193,8 +196,8 @@ public abstract class MinecraftMixin
 	@Inject(method = "allowsTelemetry()Z", at = @At("HEAD"), cancellable = true)
 	private void onAllowsTelemetry(CallbackInfoReturnable<Boolean> cir)
 	{
-		cir.setReturnValue(
-			!WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled());
+		cir.setReturnValue(WurstClient.INSTANCE.getOtfs() != null
+			&& !WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled());
 	}
 	
 	@Inject(method = "extraTelemetryAvailable()Z",
@@ -202,8 +205,8 @@ public abstract class MinecraftMixin
 		cancellable = true)
 	private void onExtraTelemetryAvailable(CallbackInfoReturnable<Boolean> cir)
 	{
-		cir.setReturnValue(
-			!WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled());
+		cir.setReturnValue(WurstClient.INSTANCE.getOtfs() != null
+			&& !WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled());
 	}
 	
 	@Override

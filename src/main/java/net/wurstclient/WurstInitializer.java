@@ -7,23 +7,27 @@
  */
 package net.wurstclient;
 
-import net.fabricmc.api.ModInitializer;
+// Adapted for native NeoForge 26.3 on 2026-10-06.
 
-public final class WurstInitializer implements ModInitializer
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.lifecycle.ClientStartedEvent;
+import net.neoforged.neoforge.common.NeoForge;
+
+@Mod(value = "wurst", dist = Dist.CLIENT)
+public final class WurstInitializer
 {
 	private static boolean initialized;
 	
-	@Override
-	public void onInitialize()
+	public WurstInitializer()
 	{
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-		
+		NeoForge.EVENT_BUS.addListener(this::onClientStarted);
+	}
+	
+	private void onClientStarted(ClientStartedEvent event)
+	{
 		if(initialized)
-			throw new RuntimeException(
-				"WurstInitializer.onInitialize() ran twice!");
-		
+			throw new IllegalStateException("Wurst initialized twice!");
 		WurstClient.INSTANCE.initialize();
 		initialized = true;
 	}

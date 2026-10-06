@@ -7,12 +7,14 @@
  */
 package net.wurstclient.navigator;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.util.Set;
 import java.util.function.Supplier;
 
 import com.mojang.blaze3d.platform.InputConstants;
 
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -195,7 +197,7 @@ public class NavigatorNewKeybindScreen extends NavigatorScreen
 		int bgx2 = middleX + 154;
 		int bgy1 = 60;
 		int bgy2 = height - 43;
-		boolean noButtons = Screens.getWidgets(this).isEmpty();
+		boolean noButtons = ScreenWidgets.getWidgets(this).isEmpty();
 		int bgy3 = bgy2 - (noButtons ? 0 : 24);
 		
 		context.enableScissor(bgx1, bgy1, bgx2, bgy3);
@@ -254,7 +256,7 @@ public class NavigatorNewKeybindScreen extends NavigatorScreen
 		context.disableScissor();
 		
 		// buttons below scissor box
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			// positions
 			int x1 = button.getX();

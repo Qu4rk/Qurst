@@ -7,6 +7,8 @@
  */
 package net.wurstclient.options;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.function.Supplier;
 
 import com.mojang.blaze3d.Blaze3D;
 
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -184,7 +186,7 @@ public class WurstOptionsScreen extends Screen
 	private void renderButtonTooltip(GuiGraphicsExtractor context, int mouseX,
 		int mouseY)
 	{
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			if(!button.isHoveredOrFocused()
 				|| !(button instanceof WurstOptionsButton))

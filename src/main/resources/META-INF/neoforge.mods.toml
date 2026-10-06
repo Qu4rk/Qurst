@@ -1,0 +1,29 @@
+license="GPL-3.0-or-later"
+
+[[mods]]
+modId="wurst"
+version="${version}"
+displayName="Wurst Client (NeoForge port)"
+authors="Wurst-Imperium and contributors; NeoForge port contributors"
+displayURL="https://www.wurstclient.net/"
+iconFile="assets/wurst/icon.png"
+description='''
+Native NeoForge 26.3 port of Wurst Client 7.56. Development build; full feature verification is in progress.
+'''
+
+[[mixins]]
+config="wurst.mixins.json"
+
+[[dependencies.wurst]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.wurst]]
+modId="minecraft"
+type="required"
+versionRange="[26.3]"
+ordering="NONE"
+side="CLIENT"

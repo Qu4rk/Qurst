@@ -7,6 +7,8 @@
  */
 package net.wurstclient.analytics;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -23,11 +25,10 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLevelEvents;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
-import net.fabricmc.loader.api.Version;
-import net.fabricmc.loader.api.metadata.ModMetadata;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.level.LevelEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.multiplayer.ServerData;
@@ -71,8 +72,7 @@ public final class PlausibleAnalytics
 		sessionProp("version", getVersion("wurst"));
 		sessionProp("short_version", getShortVersion("wurst"));
 		sessionProp("mc_version", getVersion("minecraft"));
-		sessionProp("fabric_api_version", getVersion("fabric-api"));
-		sessionProp("fabric_loader_version", getVersion("fabricloader"));
+		sessionProp("neoforge_version", getVersion("neoforge"));
 		sessionProp("modmenu_version", getVersion("modmenu"));
 		sessionProp("sodium_version", getVersion("sodium"));
 		sessionProp("sinytra_connector_version", getVersion("connector"));
@@ -80,15 +80,16 @@ public final class PlausibleAnalytics
 		Thread.ofPlatform().daemon().name("Plausible")
 			.start(this::runBackgroundLoop);
 		
-		ClientLevelEvents.AFTER_CLIENT_LEVEL_CHANGE
-			.register(this::onWorldChange);
+		NeoForge.EVENT_BUS.addListener((LevelEvent.Load event) -> {
+			if(event.getLevel() instanceof ClientLevel world)
+				onWorldChange(Minecraft.getInstance(), world);
+		});
 	}
 	
 	private String getVersion(String modId)
 	{
-		return FabricLoader.getInstance().getModContainer(modId)
-			.map(ModContainer::getMetadata).map(ModMetadata::getVersion)
-			.map(Version::toString).orElse(null);
+		return ModList.get().getModContainerById(modId)
+			.map(mod -> mod.getModInfo().getVersion().toString()).orElse(null);
 	}
 	
 	private String getShortVersion(String modId)
@@ -139,8 +140,7 @@ public final class PlausibleAnalytics
 	
 	private boolean isDebugMode()
 	{
-		return FabricLoader.getInstance().isDevelopmentEnvironment()
-			|| System.getProperty("fabric.client.gametest") != null;
+		return !FMLEnvironment.isProduction();
 	}
 	
 	private void runBackgroundLoop()

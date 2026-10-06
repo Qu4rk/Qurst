@@ -7,6 +7,8 @@
  */
 package net.wurstclient.altmanager.screens;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import com.mojang.blaze3d.platform.InputConstants;
 
 import java.io.BufferedReader;
@@ -29,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import com.google.gson.JsonObject;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
-import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.wurstclient.util.ScreenWidgets;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -498,7 +500,7 @@ public final class AltManagerScreen extends Screen
 	private void renderButtonTooltip(GuiGraphicsExtractor context, int mouseX,
 		int mouseY)
 	{
-		for(AbstractWidget button : Screens.getWidgets(this))
+		for(AbstractWidget button : ScreenWidgets.getWidgets(this))
 		{
 			if(!button.isHoveredOrFocused())
 				continue;
@@ -647,7 +649,7 @@ public final class AltManagerScreen extends Screen
 		
 		// This method sets selected to null without calling setSelected().
 		@Override
-		protected void clearEntries()
+		public void clearEntries()
 		{
 			super.clearEntries();
 			updateAltButtons();

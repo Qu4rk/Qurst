@@ -7,11 +7,12 @@
  */
 package net.wurstclient.other_features;
 
+// Adapted for native NeoForge 26.3 on 2026-10-06.
+
 import java.net.URI;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientLoginConnectionEvents;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientHandshakePacketListenerImpl;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.chat.GuiMessageTag;
 import net.minecraft.client.multiplayer.chat.GuiMessageTag.Icon;
@@ -52,7 +53,8 @@ public final class NoChatReportsOtf extends OtherFeature
 		super("NoChatReports", "description.wurst.other_feature.nochatreports");
 		addSetting(disableSignatures);
 		
-		ClientLoginConnectionEvents.INIT.register(this::onLoginStart);
+		NeoForge.EVENT_BUS.addListener(
+			(ClientPlayerNetworkEvent.LoggingIn event) -> onLoginStart());
 		EVENTS.add(ChatInputListener.class, this);
 	}
 	
@@ -106,8 +108,7 @@ public final class NoChatReportsOtf extends OtherFeature
 				s -> s.withClickEvent(clickEvent).withHoverEvent(hoverEvent)));
 	}
 	
-	private void onLoginStart(ClientHandshakePacketListenerImpl handler,
-		Minecraft client)
+	private void onLoginStart()
 	{
 		EVENTS.add(UpdateListener.class, NoChatReportsOtf.this);
 	}
