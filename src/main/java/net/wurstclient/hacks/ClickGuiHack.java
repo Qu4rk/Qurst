@@ -17,20 +17,21 @@ import net.wurstclient.hack.Hack;
 import net.wurstclient.settings.ColorSetting;
 import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.settings.SliderSetting.ValueDisplay;
+import net.wurstclient.util.QurstBranding;
 
 @DontSaveState
 @DontBlock
 @SearchTags({"click gui", "WindowGUI", "window gui", "HackMenu", "hack menu"})
 public final class ClickGuiHack extends Hack
 {
-	private final ColorSetting bgColor =
-		new ColorSetting("Background", "Background color", new Color(0x404040));
+	private final ColorSetting bgColor = new ColorSetting("Background",
+		"Background color", new Color(QurstBranding.BACKGROUND));
 	
-	private final ColorSetting acColor =
-		new ColorSetting("Accent", "Accent color", new Color(0x101010));
+	private final ColorSetting acColor = new ColorSetting("Accent",
+		"Accent color", new Color(QurstBranding.ACCENT));
 	
 	private final ColorSetting txtColor =
-		new ColorSetting("Text", "Text color", new Color(0xF0F0F0));
+		new ColorSetting("Text", "Text color", new Color(QurstBranding.TEXT));
 	
 	private final SliderSetting opacity = new SliderSetting("Opacity", 0.5,
 		0.15, 0.85, 0.01, ValueDisplay.PERCENTAGE);

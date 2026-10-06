@@ -1,34 +1,61 @@
-# Wurst Client — native NeoForge 26.3 port
+<p align="center">
+  <img src="assets/readme/hero.png" width="100%" alt="Qurst — a purple-themed Wurst Client port for native NeoForge, Minecraft Java 26.3">
+</p>
 
-Development port of [Wurst Client 7.56](https://github.com/Wurst-Imperium/Wurst7/tree/26.3), pinned to commit `71e3af0f2747937086ef889e34359507d95cc9f8`.
+# Qurst
 
-Target: Minecraft Java **26.3**, NeoForge **26.3.0.51-beta**, Java **25**. This is a native NeoForge mod.
+**Wurst Client, brought to native NeoForge with a purple identity.** Qurst is Qu4rk's development port of Wurst 7.56 for **Minecraft Java 26.3**, **NeoForge 26.3.0.51-beta** and **Java 25**.
 
-**Status:** slice 01 native build and title-screen bootstrap checks pass; slice 02a bundled-translation loading, Wurst Options toggle and restart persistence checks pass; slice 02b keybind editing, profile save/load and restart dispatch checks pass; the independent reviews are recorded under `.quarkloop/runs/`. The full upstream feature set is retained; runtime feature parity is being verified in the later slices. See [the roadmap](docs/NEOFORGE_PORT.md) and [the complete source inventory](docs/upstream-inventory.json).
+[Build it](#build-and-play) · [Port roadmap](docs/NEOFORGE_PORT.md) · [Source inventory](docs/upstream-inventory.json) · [Report a bug](https://github.com/Qu4rk/Qurst/issues)
 
-## Build and run
+## What works today
 
-Install a Java 25 JDK and set `JAVA_HOME`, then run:
+| Verified slice | Evidence |
+| :--- | :--- |
+| Native bootstrap | Client reaches the title screen; all 156 hacks, 52 commands and 18 other features register. |
+| Translations and Options | Bundled German translations, the Options toggle and saved language preferences survive restart. |
+| Keybinds and profiles | Editing, capture, profile save/load and restored keyboard/mouse dispatch pass native client checks. |
+
+**The full port is in progress.** All upstream feature sources are retained; these checks establish the behavior above. Movement, rendering, combat, world/inventory features and optional renderer compatibility still need their own runtime verification. This is a development build, with no stable Qurst release yet.
+
+## Build and play
+
+Install a **Java 25 JDK**, set `JAVA_HOME`, then:
 
 ```sh
 ./gradlew build --console=plain
 python3 scripts/verify_neoforge_port.py
-./gradlew runClientKeybindsTest --console=plain
-./gradlew runClientTranslationsTest --console=plain
-./gradlew runClientSmoke --console=plain
 ./gradlew runClient --console=plain
 ```
 
-On the development Mac, `./scripts/gradle-java25` can be used in place of `./gradlew`; it selects the verified local Java 25 installation or a system JDK. It does not install Java.
+The game runs in `run/`. For an existing Minecraft **26.3** installation with the target NeoForge version, place the development jar in its `mods/` directory:
 
-The client runs in the project's `run/` directory. The automated bootstrap test uses `run/smoke/`, checks all 156 hacks, 52 commands, 18 other features and the title screen, then exits. The translations test uses `run/translations-test/` across two client launches: the first sets Minecraft to German and enables Wurst translations through the real Wurst Options Translations toggle; the second proves the persisted non-default setting still resolves German after restart. The keybind test uses `run/keybinds-test/` across two client launches: the first edits bindings and saves profile `slice02b.json` through the real manager/editor/capture/profiles screens; the second proves the restored bindings dispatch through the real native input handlers. Test-only code is outside the production artifact. Development runs use the upstream analytics debug path.
+```text
+build/libs/Qurst-7.56-MC26.3-NeoForge-dev.1.jar
+```
 
-Build outputs are under `build/libs/`. The package verifier checks native metadata, every hack and command class, original assets, GPL notices and the corresponding sources jar. It rejects missing features and Fabric dependencies.
+The corresponding `-sources.jar` is built alongside it. Install only the main jar. Use a fresh game directory while testing the port. On the development Mac, `./scripts/gradle-java25` selects the existing Java 25 installation and can replace `./gradlew`.
 
-The original Fabric client tests are preserved in `src/gametest` as migration references. They do not currently run on NeoForge. See the roadmap for behavior testing and optional renderer compatibility.
+Qurst's default ClickGUI palette pairs dark violet panels with purple accents and pale lavender text. Your supplied Qurst logo appears in the HUD and Options button. Existing custom colors remain saved. The internal mod ID and data directory remain `wurst` so the rename preserves configuration compatibility.
 
-## License and attribution
+## Verify the port
 
-Original code: Wurst-Imperium and contributors, copyright 2014–2026. This fork preserves the upstream GPLv3 license and GPL-3.0-or-later metadata. See [LICENSE.txt](LICENSE.txt). Native port changes are identified in source comments and [the port notes](docs/NEOFORGE_PORT.md). Corresponding sources are built alongside the binary.
+These native client checks need a graphical session and exit automatically:
 
-[Original upstream README](docs/UPSTREAM_README.md).
+```sh
+./gradlew runClientSmoke --console=plain
+./gradlew runClientTranslationsTest --console=plain
+./gradlew runClientKeybindsTest --console=plain
+```
+
+They use isolated directories under `run/`; translations and keybinds each test two launches to prove restart persistence. Test mods are excluded from the production jar. The package verifier checks native metadata, retained feature classes/assets, GPL notices and corresponding sources, and rejects Fabric dependencies. GitHub Actions runs the build and package checks.
+
+The [roadmap](docs/NEOFORGE_PORT.md) tracks the remaining slices. Original Fabric tests are preserved as migration references and do not count as native NeoForge evidence. Development launches use the upstream analytics debug path.
+
+## Upstream and license
+
+Qurst derives from [Wurst Client 7.56](https://github.com/Wurst-Imperium/Wurst7/tree/71e3af0f2747937086ef889e34359507d95cc9f8), pinned to commit `71e3af0f2747937086ef889e34359507d95cc9f8`.
+
+Original code © 2014–2026 Wurst-Imperium and contributors. Qurst port and branding maintained by Qu4rk and contributors. The upstream **GPLv3** license and **GPL-3.0-or-later** metadata are preserved; see [LICENSE.txt](LICENSE.txt). Original assets and copyright notices remain in the source distribution.
+
+[Original Wurst README](docs/UPSTREAM_README.md) · [Wurst feature documentation](https://wurst.wiki/)

@@ -79,7 +79,7 @@ public enum WurstClient
 	
 	public void initialize()
 	{
-		System.out.println("Starting Wurst Client...");
+		System.out.println("Starting Qurst...");
 		
 		MC = Minecraft.getInstance();
 		IMC = (IMinecraftClient)MC;

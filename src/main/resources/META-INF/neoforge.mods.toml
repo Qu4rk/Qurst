@@ -3,12 +3,12 @@ license="GPL-3.0-or-later"
 [[mods]]
 modId="wurst"
 version="${version}"
-displayName="Wurst Client (NeoForge port)"
-authors="Wurst-Imperium and contributors; NeoForge port contributors"
-displayURL="https://www.wurstclient.net/"
-iconFile="assets/wurst/icon.png"
+displayName="Qurst"
+authors="Wurst-Imperium and contributors; Qu4rk and Qurst contributors"
+displayURL="https://github.com/Qu4rk/Qurst"
+iconFile="assets/wurst/qurst-logo.png"
 description='''
-Native NeoForge 26.3 port of Wurst Client 7.56. Development build; full feature verification is in progress.
+Qurst, a native NeoForge 26.3 port of Wurst Client 7.56 with a purple theme. Development build; full feature verification is in progress.
 '''
 
 [[mixins]]

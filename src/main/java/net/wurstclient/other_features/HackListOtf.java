@@ -17,6 +17,7 @@ import net.wurstclient.hack.Hack;
 import net.wurstclient.other_feature.OtherFeature;
 import net.wurstclient.settings.CheckboxSetting;
 import net.wurstclient.settings.ColorSetting;
+import net.wurstclient.util.QurstBranding;
 import net.wurstclient.settings.EnumSetting;
 
 @SearchTags({"hack list", "HakList", "hak list", "HacksList", "hacks list",
@@ -39,7 +40,7 @@ public final class HackListOtf extends OtherFeature
 	private final ColorSetting color = new ColorSetting("Color",
 		"Color of the HackList text.\n"
 			+ "Only visible when \u00a76RainbowUI\u00a7r is disabled.",
-		Color.WHITE);
+		new Color(QurstBranding.TEXT));
 	
 	private final EnumSetting<SortBy> sortBy = new EnumSetting<>("Sort by",
 		"Determines how the HackList entries are sorted.\n"

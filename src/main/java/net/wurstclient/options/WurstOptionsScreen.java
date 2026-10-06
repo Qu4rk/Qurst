@@ -121,9 +121,9 @@ public class WurstOptionsScreen extends Screen
 	
 	private void addLinkButtons()
 	{
-		new WurstOptionsButton(54, 24, () -> "Official Website",
-			"§n§lWurstClient.net", b -> Blaze3D.openUri(
-				URI.create("https://www.wurstclient.net/options-website/")));
+		new WurstOptionsButton(54, 24, () -> "Qurst on GitHub",
+			"§n§lgithub.com/Qu4rk/Qurst",
+			b -> Blaze3D.openUri(URI.create("https://github.com/Qu4rk/Qurst")));
 		
 		new WurstOptionsButton(54, 48, () -> "Wurst Wiki", "§n§lWurst.Wiki",
 			b -> Blaze3D.openUri(
@@ -137,7 +137,7 @@ public class WurstOptionsScreen extends Screen
 			b -> Blaze3D.openUri(
 				URI.create("https://www.wurstclient.net/options-twitter/")));
 		
-		new WurstOptionsButton(54, 120, () -> "Donate",
+		new WurstOptionsButton(54, 120, () -> "Donate to Wurst",
 			"§n§lWurstClient.net/donate\n"
 				+ "Donate now to help me keep the Wurst Client alive and free"
 				+ " to use for everyone.\n\n"
@@ -172,7 +172,7 @@ public class WurstOptionsScreen extends Screen
 		int y1 = 40;
 		int y2 = height / 4 + 24 - 28;
 		
-		context.centeredText(tr, "Wurst Options", middleX, y1,
+		context.centeredText(tr, "Qurst Options", middleX, y1,
 			CommonColors.WHITE);
 		
 		context.centeredText(tr, "Settings", middleX - 104, y2,

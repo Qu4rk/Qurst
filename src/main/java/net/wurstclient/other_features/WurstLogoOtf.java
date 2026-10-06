@@ -14,6 +14,7 @@ import net.wurstclient.DontBlock;
 import net.wurstclient.SearchTags;
 import net.wurstclient.other_feature.OtherFeature;
 import net.wurstclient.settings.ColorSetting;
+import net.wurstclient.util.QurstBranding;
 import net.wurstclient.settings.EnumSetting;
 
 @SearchTags({"wurst logo", "top left corner"})
@@ -23,17 +24,17 @@ public final class WurstLogoOtf extends OtherFeature
 	private final ColorSetting bgColor = new ColorSetting("Background",
 		"Background color.\n"
 			+ "Only visible when \u00a76RainbowUI\u00a7r is disabled.",
-		Color.WHITE);
+		new Color(QurstBranding.BACKGROUND));
 	
 	private final ColorSetting txtColor =
-		new ColorSetting("Text", "Text color.", Color.BLACK);
+		new ColorSetting("Text", "Text color.", new Color(QurstBranding.TEXT));
 	
 	private final EnumSetting<Visibility> visibility =
 		new EnumSetting<>("Visibility", Visibility.values(), Visibility.ALWAYS);
 	
 	public WurstLogoOtf()
 	{
-		super("WurstLogo", "Shows the Wurst logo and version on the screen.");
+		super("WurstLogo", "Shows the Qurst logo and version on the screen.");
 		addSetting(bgColor);
 		addSetting(txtColor);
 		addSetting(visibility);

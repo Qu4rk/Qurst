@@ -1,4 +1,4 @@
-# Wurst 26.3 native NeoForge port
+# Qurst — Wurst 26.3 native NeoForge port
 
 Requested and authorized on 2026-10-06: full Wurst port for Minecraft Java 26.3; use Quarkloop, install relevant skills, split the project into slices, and start implementation.
 
@@ -6,7 +6,7 @@ Requested and authorized on 2026-10-06: full Wurst port for Minecraft Java 26.3;
 
 - Upstream: https://github.com/Wurst-Imperium/Wurst7, branch 26.3, commit `71e3af0f2747937086ef889e34359507d95cc9f8`, Wurst 7.56.
 - Target: native NeoForge 26.3.0.51-beta, Java 25, ModDevGradle 2.0.147.
-- Preserve upstream copyright, GPLv3 license, module behavior, settings schemas, assets, commands, and user controls. No publishing or Git commits are authorized.
+- Preserve upstream copyright, GPLv3 license, module behavior, settings schemas, assets, commands, and user controls. Qurst branding and creation of the public `Qu4rk/Qurst` repository were authorized on 2026-10-06. Later slice commits and pushes still require user authorization.
 - Source inventory: 156 *Hack.java files, 52 *Cmd.java files, 74 mixin source files. These are source counts, not a claim of tested runtime parity.
 - Keep Fabric client tests as migration references; they do not count as NeoForge test evidence.
 
@@ -27,7 +27,7 @@ Each slice receives its own frozen PLAN, builder evidence, and fresh independent
 
 ## Environment
 
-- Fresh dedicated clone in `/Volumes/MicroSD/Projects/BosonQ`, branch `codex/neoforge-26.3`.
+- Fresh dedicated clone in `/Volumes/MicroSD/Projects/Qurst`, branch `codex/neoforge-26.3`.
 - Java absent initially; SHA-256-verified Temurin 25 downloaded to `/Users/eliasliasides/.cache/bosonq/java25`.
 - Installed minecraft-modding and minecraft-testing skills. Their general licensing examples do not override Wurst's license; legacy 1.21 examples do not override exact 26.3 APIs.
 - ModDevGradle and lifecycle APIs checked against official NeoForge MDK and NeoForge/FML source on 2026-10-06.
@@ -62,3 +62,9 @@ The pinned upstream has 32 Fabric gametest Java files, including screenshot comp
 ## Maintainer workflow
 
 Use `scripts/gradle-java25` to select Java 25 on this machine, or set JAVA_HOME and use `./gradlew`. The active contract and ownership are under `.quarkloop/`. Only one builder may edit the working tree. Each completed slice requires fresh independent Standards and Spec review. Do not publish this development build as a completed full port.
+
+## Qurst identity
+
+Qurst is the purple-themed port maintained by Qu4rk at [Qu4rk/Qurst](https://github.com/Qu4rk/Qurst). The Gradle project and archive name are `Qurst`; NeoForge displays the mod as Qurst. Supplied Qurst artwork is used in mod metadata, the HUD and the Options button. Default ClickGUI colors are dark violet, purple and pale lavender; saved custom colors keep their existing values.
+
+Technical identifiers (`wurst`, `net.wurstclient`, feature names and the `wurst/` data directory) remain stable for existing settings, resource-pack identity filtering and upstream source compatibility. Original Wurst assets and GPL notices are retained. The original GitHub automation is archived under `docs/upstream-github/`; Qurst's workflow builds the native jars and runs the package verifier. Native client tests currently run on the development machine with a graphical session.
