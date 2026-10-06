@@ -45,7 +45,7 @@ Slice 01 native build, packaging and title-screen bootstrap checks pass. Indepen
 - Analytics/client login callbacks use native events.
 - Better Block Entities detection uses the loading mod list during mixin selection.
 - Early telemetry/session callbacks tolerate the later native lifecycle initialization. Re-enabling telemetry from an existing user profile needs explicit behavior verification in slice 07.
-- Translation resource-pack identity filtering still accepts upstream Fabric/vanilla identities. NeoForge uses `neoforge:mod/wurst`; adapting and testing translations is a concrete slice 02 requirement.
+- Translation resource-pack identity filtering accepts the upstream Fabric/vanilla identities plus the native NeoForge identity `neoforge:mod/wurst` (observed at runtime). Slice 02a proves bundled English/German loading, the Wurst Options toggle and restart persistence.
 - AntiWaterPush targets the native fluid predicate; Flight augments NeoForge's gliding check. Their in-world behavior remains a slice 03 requirement.
 - Fabric Indigo's optional hook and Fabric gametests remain in the source tree as references. The native artifact has no Fabric dependency.
 
@@ -57,7 +57,7 @@ Nine javac deprecation warnings in unchanged upstream code come from NeoForge's 
 
 ## Tests still to migrate
 
-The pinned upstream has 32 Fabric gametest Java files, including screenshot comparisons, movement regressions, inventory commands and entity filters. These are preserved under `src/gametest`. They are excluded from the native build and currently provide no NeoForge regression evidence. The isolated `src/smoke` test mod supplies only bootstrap/title screen verification. Port the relevant upstream tests alongside each runtime behavior slice.
+The pinned upstream has 32 Fabric gametest Java files, including screenshot comparisons, movement regressions, inventory commands and entity filters. These are preserved under `src/gametest`. They are excluded from the native build and currently provide no NeoForge regression evidence. The isolated `src/smoke` test mod supplies only bootstrap/title screen verification. The isolated `src/clienttest` test mod proves translations/options/restart behavior across two client launches in `run/translations-test/`. Port the relevant upstream tests alongside each runtime behavior slice.
 
 ## Maintainer workflow
 

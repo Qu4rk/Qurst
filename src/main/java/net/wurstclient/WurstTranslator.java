@@ -233,8 +233,14 @@ public class WurstTranslator implements ResourceManagerReloadListener
 			
 		// Note: Namespace can be "fabric" or "vanilla" depending on
 		// Fabric API version (changed in 0.139.3+1.21.11).
-		return ("fabric".equals(knownPack.namespace())
+		if(("fabric".equals(knownPack.namespace())
 			|| "vanilla".equals(knownPack.namespace()))
-			&& "wurst".equals(knownPack.id());
+			&& "wurst".equals(knownPack.id()))
+			return true;
+			
+		// Native NeoForge loader identity, observed at runtime as
+		// neoforge:mod/wurst:<mod version>.
+		return "neoforge".equals(knownPack.namespace())
+			&& "mod/wurst".equals(knownPack.id());
 	}
 }

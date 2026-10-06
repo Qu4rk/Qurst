@@ -24,17 +24,24 @@ sourceSets {
         compileClasspath += sourceSets.main.output
         runtimeClasspath += sourceSets.main.output
     }
+    clienttest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
 }
 
 configurations {
     smokeImplementation.extendsFrom implementation
     smokeRuntimeOnly.extendsFrom runtimeOnly
+    clienttestImplementation.extendsFrom implementation
+    clienttestRuntimeOnly.extendsFrom runtimeOnly
 }
 
 neoForge {
     version = project.neo_version
     validateAccessTransformers = true
     addModdingDependenciesTo sourceSets.smoke
+    addModdingDependenciesTo sourceSets.clienttest
 
     mods {
         wurst {
@@ -42,6 +49,9 @@ neoForge {
         }
         wurst_smoke {
             sourceSet sourceSets.smoke
+        }
+        wurst_clienttest {
+            sourceSet sourceSets.clienttest
         }
     }
 
@@ -56,6 +66,22 @@ neoForge {
             loadedMods = [mods.wurst, mods.wurst_smoke]
             gameDirectory = file('run/smoke')
             programArgument '--username=Wurst-Bot'
+        }
+        clientTranslationsTest1 {
+            client()
+            sourceSet = sourceSets.clienttest
+            loadedMods = [mods.wurst, mods.wurst_clienttest]
+            gameDirectory = file('run/translations-test')
+            programArgument '--username=Wurst-Bot'
+            systemProperty 'wurst.test.phase', '1'
+        }
+        clientTranslationsTest2 {
+            client()
+            sourceSet = sourceSets.clienttest
+            loadedMods = [mods.wurst, mods.wurst_clienttest]
+            gameDirectory = file('run/translations-test')
+            programArgument '--username=Wurst-Bot'
+            systemProperty 'wurst.test.phase', '2'
         }
     }
 }
@@ -96,6 +122,54 @@ tasks.named('runClientSmoke') {
     doLast {
         if (!smokeMarker.isFile() || smokeMarker.text.trim() != '156 hacks; 52 commands; 18 other features; title screen') {
             throw new GradleException('Native Wurst bootstrap smoke test did not pass.')
+        }
+    }
+}
+
+// Slice 02a translations restart proof: two separate client JVMs share one
+// isolated game directory. Phase 1 starts from a clean slate and persists a
+// non-default selection through the real Options control; phase 2 asserts the
+// restored state before any mutation. Only generated attestations are reset.
+def translationsTestDir = layout.projectDirectory.dir('run/translations-test')
+def translationsPhase1Marker =
+    layout.projectDirectory.file('run/translations-test/phase1-pass.txt').asFile
+def translationsFinalMarker =
+    layout.projectDirectory.file('run/translations-test/wurst-translations-pass.txt').asFile
+def translationsSettings =
+    layout.projectDirectory.file('run/translations-test/wurst/settings.json').asFile
+tasks.named('runClientTranslationsTest1') {
+    doFirst {
+        def dir = translationsTestDir.asFile.toPath()
+        if (java.nio.file.Files.isDirectory(dir)) {
+            java.nio.file.Files.walk(dir).sorted(java.util.Comparator.reverseOrder())
+                .forEach(java.nio.file.Files::deleteIfExists)
+        }
+    }
+}
+tasks.named('runClientTranslationsTest2') {
+    dependsOn 'runClientTranslationsTest1'
+}
+tasks.register('runClientTranslationsTest') {
+    dependsOn 'runClientTranslationsTest2'
+    doLast {
+        if (!translationsPhase1Marker.isFile()
+            || translationsPhase1Marker.text.trim()
+                != 'phase=1 ok translations-toggle de_de') {
+            throw new GradleException(
+                'Translations test phase 1 did not attest its UI persistence.')
+        }
+        if (!translationsFinalMarker.isFile()
+            || translationsFinalMarker.text.trim()
+                != '156 hacks; 52 commands; 18 other features; de_de restored') {
+            throw new GradleException(
+                'Translations restart proof did not pass.')
+        }
+        def settings =
+            new groovy.json.JsonSlurper().parse(translationsSettings)
+        def forceEnglish = settings['Translations']['Force English']
+        if (!(forceEnglish instanceof Boolean) || forceEnglish) {
+            throw new GradleException(
+                'Persisted Force English setting is not false.')
         }
     }
 }
